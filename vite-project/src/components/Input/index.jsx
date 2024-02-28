@@ -1,5 +1,5 @@
-import { forwardRef } from "react"
-import styles from "../Input/input.module.scss"
+import { forwardRef } from "react";
+import styles from "../Input/input.module.scss";
 
 const Input = forwardRef(({ label, type, placeholder, ...rest }, ref ) => {
     return (

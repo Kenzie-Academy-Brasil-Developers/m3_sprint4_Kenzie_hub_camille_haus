@@ -4,7 +4,7 @@ import formRegisterSchema from "./formRegisterSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 import styles from "../RegisterPage/register.module.scss";
-import api from "../../services/api.js"
+import api from "../../services/api.js";
 
 const RegisterPage = () => {
   const {
