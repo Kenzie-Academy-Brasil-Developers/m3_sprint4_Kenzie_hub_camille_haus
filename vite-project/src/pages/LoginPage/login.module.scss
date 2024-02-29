@@ -33,6 +33,22 @@
   }
 }
 
+.link {
+  display: flex;
+  justify-content: center;
+
+  padding: 5px 5px 0px 5px;
+  margin: 10px 0px;
+
+  background-color: var(--grey-1);
+
+  border: none;
+  border-radius: 5px;
+
+  font-size: var(--paragraph);
+  color: var(--grey-0);
+}
+
 .p {
   display: flex;
   justify-content: center;
@@ -59,20 +75,18 @@
 }
 
 .registerButton {
-  padding: 15px;
-  margin: 10px 0px;
-
   background-color: var(--grey-1);
 
   border: none;
   border-radius: 5px;
+
+  padding-top: 10px;
 
   font-size: var(--paragraph);
   color: var(--grey-0);
 }
 
 @media (width > 431px) {
-
   form {
     max-width: 410px;
   }

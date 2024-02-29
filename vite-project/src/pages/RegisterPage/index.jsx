@@ -18,16 +18,15 @@ const RegisterPage = () => {
   const navigate = useNavigate();
 
   const createUser = async (payload) => {
+    const { confirmPassword, ...rest } = payload;
 
-    const { confirmPassword, ...rest } = payload
-
-      try {
-        const { data } = await api.post("/users", rest);
-        navigate("/");
-      } catch (error) {
-        console.log(error)
-      }
-  }
+    try {
+      const { data } = await api.post("/users", rest);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const backButton = () => {
     navigate("/");
@@ -137,10 +136,18 @@ const RegisterPage = () => {
         {errors.contact ? <p>{errors.contact.message}</p> : null}
         <p className={styles.selectP}>Selecionar modulo</p>
         <select {...register("course_module")}>
-          <option value="Primeiro módulo (Introdução ao Frontend)">Primeiro módulo (Introdução ao Frontend)</option>
-          <option value="Segundo módulo (Frontend Avançado)">Segundo módulo (Frontend Avançado)</option>
-          <option value="Terceiro módulo (Introdução ao Backend)">Terceiro módulo (Introdução ao Backend)</option>
-          <option value="Quarto módulo (Backend Avançado)">Quarto módulo (Backend Avançado)</option>
+          <option value="Primeiro módulo (Introdução ao Frontend)">
+            Primeiro módulo (Introdução ao Frontend)
+          </option>
+          <option value="Segundo módulo (Frontend Avançado)">
+            Segundo módulo (Frontend Avançado)
+          </option>
+          <option value="Terceiro módulo (Introdução ao Backend)">
+            Terceiro módulo (Introdução ao Backend)
+          </option>
+          <option value="Quarto módulo (Backend Avançado)">
+            Quarto módulo (Backend Avançado)
+          </option>
         </select>
         {errors.module ? <p>{errors.module.message}</p> : null}
         <button className={styles.registerButton} type="submit">

@@ -35,39 +35,39 @@
 }
 
 .top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    width: 90%;
+  width: 90%;
 
-    padding: 40px 0px;
+  padding: 40px 0px;
 
-    button {
-        background-color: var(--grey-3);
-
-        border: none;
-        border-radius: 5px;
-
-        padding: 12px 25px;
-
-        font-size: var(--headline);
-        font-weight: bold;
-        color: var(--grey-0)
-    }
-}
-
-.registerButton {
-    padding: 15px;
-    margin: 10px 0px;
-
-    background-color: var(--color-primary-negative);
+  button {
+    background-color: var(--grey-3);
 
     border: none;
     border-radius: 5px;
 
-    font-size: var(--paragraph);
+    padding: 12px 25px;
+
+    font-size: var(--headline);
+    font-weight: bold;
     color: var(--grey-0);
+  }
+}
+
+.registerButton {
+  padding: 15px;
+  margin: 10px 0px;
+
+  background-color: var(--color-primary-negative);
+
+  border: none;
+  border-radius: 5px;
+
+  font-size: var(--paragraph);
+  color: var(--grey-0);
 }
 
 .selectP {
@@ -96,7 +96,6 @@
 }
 
 @media (width > 431px) {
-
   .top {
     max-width: 440px;
   }

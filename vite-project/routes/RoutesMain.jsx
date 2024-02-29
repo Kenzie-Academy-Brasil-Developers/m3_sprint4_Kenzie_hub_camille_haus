@@ -13,7 +13,7 @@ const RoutesMain = () => {
 
   const logout = () => {
     setUserLogin(null);
-    localStorage.removeItem("@KenzieHub:token")
+    localStorage.removeItem("@KenzieHub:token");
     navigate("/");
   }
 
