@@ -2,14 +2,11 @@ import Input from "../../components/Input";
 import { useForm } from "react-hook-form";
 import formLoginSchema from "./formLoginSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "../LoginPage/login.module.scss";
-import api from "../../services/api";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
-const LoginPage = ({ setUserLogin }) => {
-  const navigate = useNavigate();
+
+const LoginPage = () => {
 
   const {
     register,
@@ -20,23 +17,7 @@ const LoginPage = ({ setUserLogin }) => {
   });
 
   const submit = (formData) => {
-    userLogin(formData);
-  };
-
-  const userLogin = async (payload) => {
-    try {
-      const { data } = await api.post("/sessions", payload);
-      navigate("/dashboard");
-      setUserLogin(data.user);
-
-      toast.success("Login efetuado com sucesso!");
-
-      localStorage.setItem("@KenzieHub:token", data.token);
-    } catch (error) {
-      console.log(error);
-
-      toast.error("Usuário e/ou senha inválidos");
-    }
+    loginUser(formData);
   };
 
   return (

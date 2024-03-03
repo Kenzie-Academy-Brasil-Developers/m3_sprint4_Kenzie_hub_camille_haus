@@ -81,6 +81,7 @@
   border-radius: 5px;
 
   padding-top: 10px;
+  padding-bottom: 20px;
 
   font-size: var(--paragraph);
   color: var(--grey-0);
@@ -93,5 +94,7 @@
 
   .registerButton {
     margin-bottom: 20px;
+
+    padding-bottom: 0px;
   }
 }

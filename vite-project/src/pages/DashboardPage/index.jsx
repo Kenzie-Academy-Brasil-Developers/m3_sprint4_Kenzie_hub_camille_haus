@@ -1,6 +1,11 @@
+import { UserContext } from "../../providers/UserContext";
 import styles from "../DashboardPage/dashboard.module.scss";
+import { useContext } from "react";
 
-const DashboardPage = ({ userLogin, logout }) => {
+const DashboardPage = () => {
+
+  const { userLogin, logout } = useContext(UserContext);
+  
   return (
     <div className={styles.container}>
       <div className={styles.firstBlock}>

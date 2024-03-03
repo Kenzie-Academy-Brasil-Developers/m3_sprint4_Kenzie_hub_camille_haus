@@ -4,7 +4,6 @@ import formRegisterSchema from "./formRegisterSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 import styles from "../RegisterPage/register.module.scss";
-import api from "../../services/api.js";
 
 const RegisterPage = () => {
   const {
@@ -16,17 +15,6 @@ const RegisterPage = () => {
   });
 
   const navigate = useNavigate();
-
-  const createUser = async (payload) => {
-    const { confirmPassword, ...rest } = payload;
-
-    try {
-      const { data } = await api.post("/users", rest);
-      navigate("/");
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const backButton = () => {
     navigate("/");
