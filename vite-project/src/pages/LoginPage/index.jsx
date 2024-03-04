@@ -4,9 +4,11 @@ import formLoginSchema from "./formLoginSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Link } from "react-router-dom";
 import styles from "../LoginPage/login.module.scss";
-
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserContext";
 
 const LoginPage = () => {
+  const { loginUser } = useContext(UserContext);
 
   const {
     register,

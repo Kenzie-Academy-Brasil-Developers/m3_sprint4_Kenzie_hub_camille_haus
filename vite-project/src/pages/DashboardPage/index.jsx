@@ -3,9 +3,8 @@ import styles from "../DashboardPage/dashboard.module.scss";
 import { useContext } from "react";
 
 const DashboardPage = () => {
-
   const { userLogin, logout } = useContext(UserContext);
-  
+
   return (
     <div className={styles.container}>
       <div className={styles.firstBlock}>
@@ -57,8 +56,8 @@ const DashboardPage = () => {
       </div>
       <div className={styles.div}></div>
       <div className={styles.secondBlock}>
-        <p>Olá, {userLogin.name}</p>
-        <p className={styles.course}>{userLogin.course_module}</p>
+        <p>Olá, {userLogin?.name}</p>
+        <p className={styles.course}>{userLogin?.course_module}</p>
       </div>
       <div className={styles.div}></div>
       <div className={styles.thirdBlock}>
