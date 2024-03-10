@@ -1,0 +1,33 @@
+.modalOverlay {
+  position: fixed;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+
+  .modalTop {
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--paragraph);
+
+    background-color: var(--grey-2);
+
+    width: 370px;
+    padding: 20px 15px 20px 15px;
+
+    border-radius: 5px 5px 0px 0px;
+
+    button {
+      background-color: var(--grey-2);
+      border: none;
+      color: var(--grey-1);
+    }
+  }
+}

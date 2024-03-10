@@ -1,9 +1,12 @@
+import CreateTechModal from "../../components/CreateTechModal";
+import EditTechModal from "../../components/EditTechModal";
 import { UserContext } from "../../providers/UserContext";
 import styles from "../DashboardPage/dashboard.module.scss";
 import { useContext } from "react";
+import { RiAddBoxFill } from "react-icons/ri";
 
 const DashboardPage = () => {
-  const { userLogin, logout } = useContext(UserContext);
+  const { userLogin, logout, isOpen, openModal, techsList } = useContext(UserContext);
 
   return (
     <div className={styles.container}>
@@ -61,10 +64,20 @@ const DashboardPage = () => {
       </div>
       <div className={styles.div}></div>
       <div className={styles.thirdBlock}>
-        <h3>Que pena! Estamos em desenvolvimento :( </h3>
-        <p>
-          Nossa aplicação está em desenvolvimento, em breve teremos novidades
-        </p>
+        <h3>Tecnologias</h3>
+        <span>
+          <RiAddBoxFill size={45} onClick={() => openModal()}/>
+        </span>
+      </div>
+      {isOpen ? <CreateTechModal /> : null}
+      <div>
+        {/* <ul>
+          {techsList.map((tech) => 
+          <li key={index}>
+            <h4>{tech.title}</h4>
+            <p>{tech.status}</p>
+          </li>)}
+        </ul> */}
       </div>
     </div>
   );

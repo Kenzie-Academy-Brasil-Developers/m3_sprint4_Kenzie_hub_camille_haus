@@ -1,0 +1,43 @@
+.form {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+  width: 100%;
+  max-width: 370px;
+  background: var(--grey-3);
+
+  padding: 15px;
+
+  gap: 20px;
+
+  border-radius: 0px 0px 5px 5px;
+
+  p {
+    font-size: var(--headline);
+  }
+
+  select {
+    padding: 15px;
+    background-color: var(--grey-2);
+
+    border: none;
+    border-radius: 5px;
+
+    font-size: var(--paragraph);
+    color: var(--grey-1);
+  }
+
+  button {
+    padding: 15px;
+    margin: 10px 0px;
+  
+    background-color: var(--color-primary);
+  
+    border: none;
+    border-radius: 5px;
+  
+    font-size: var(--paragraph);
+    color: var(--grey-0);
+  }
+}

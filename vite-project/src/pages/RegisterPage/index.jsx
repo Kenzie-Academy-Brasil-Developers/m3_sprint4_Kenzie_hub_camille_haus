@@ -124,7 +124,7 @@ const RegisterPage = () => {
         {errors.contact ? <p>{errors.contact.message}</p> : null}
         <p className={styles.selectP}>Selecionar modulo</p>
         <select {...register("course_module")}>
-          <option value="Primeiro módulo (Introdução ao Frontend)">
+          <option value="Primeiro módulo (Introdução ao Frontend">
             Primeiro módulo (Introdução ao Frontend)
           </option>
           <option value="Segundo módulo (Frontend Avançado)">

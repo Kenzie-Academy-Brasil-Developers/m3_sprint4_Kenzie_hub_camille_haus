@@ -59,12 +59,13 @@
 
 .thirdBlock {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
   width: 90%;
 
-  padding: 30px 30px;
+  padding: 15px 30px;
   gap: 30px;
 
   h3 {
@@ -72,9 +73,11 @@
     font-weight: bold;
   }
 
-  p {
-    font-size: var(--paragraph);
+  span {
+    color: var(--grey-3);
+
   }
+
 }
 
 @media (min-width: 431px) {
