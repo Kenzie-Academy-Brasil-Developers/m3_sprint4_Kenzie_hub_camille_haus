@@ -1,23 +1,41 @@
 import { useContext } from "react";
 import Input from "../Input";
-import styles from "../Modal/styles.module.scss"
+import styles from "../Modal/styles.module.scss";
 import { useForm } from "react-hook-form";
 import { UserContext } from "../../providers/UserContext";
 import { TechContext } from "../../providers/TechContext";
 
-const Modal = ({title, buttonName}) => {
+const Modal = ({ title, buttonName }) => {
+  const { addTechs, editingTech, techUpdate, setEditingTech, isEditModalOpen } =
+    useContext(TechContext);
+  const { isOpen } = useContext(UserContext);
 
-  const { setTechsList, getTechsList } = useContext(TechContext);
-
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit } = useForm({
+    defaultValues: isEditModalOpen
+      ? {
+          title: editingTech.title,
+          status: editingTech.status,
+        }
+      : {},
+  });
 
   const submit = (formData) => {
-    setTechsList(formData);
-  }
+    if (isOpen) {
+      addTechs(formData);
+    } else {
+      setEditingTech(formData);
+      techUpdate(formData);
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit(submit)} className={styles.form}>
-      <Input label={"Nome"} type={"text"} placeholder={"Material UI"} {...register("title")}/>
+      <Input
+        label={"Nome"}
+        type={"text"}
+        placeholder={"Material UI"}
+        {...register("title")}
+      />
       <p>{title}</p>
       <select {...register("status")}>
         <option value={"Iniciante"}>Iniciante</option>

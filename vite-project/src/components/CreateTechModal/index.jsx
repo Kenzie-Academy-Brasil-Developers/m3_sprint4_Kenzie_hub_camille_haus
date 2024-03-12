@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
 
 const CreateTechModal = () => {
-  const { closeModal, getTechsList } = useContext(UserContext);
+  const { closeModal } = useContext(UserContext);
 
   return (
     <div className={styles.modalOverlay}>

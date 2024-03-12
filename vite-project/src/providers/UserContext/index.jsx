@@ -10,16 +10,16 @@ export const UserProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const [userLogin, setUserLogin] = useState(null);
-  const [ techsList, setTechsList ] = useState();
-  const [ isOpen, setIsOpen ] = useState(false);
+  const [techsList, setTechsList] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
 
   const openModal = () => {
     setIsOpen(true);
-  }
+  };
 
   const closeModal = () => {
     setIsOpen(false);
-  }
+  };
 
   const createUser = async (payload) => {
     const { confirmPassword, ...rest } = payload;
@@ -66,6 +66,7 @@ export const UserProvider = ({ children }) => {
             },
           });
           setUserLogin(data);
+          setTechsList(data.techs);
           navigate("/dashboard");
         } catch (error) {
           console.log(error);
@@ -78,7 +79,19 @@ export const UserProvider = ({ children }) => {
   }, []);
 
   return (
-    <UserContext.Provider value={{ userLogin, createUser, loginUser, logout, techsList, setTechsList, openModal, closeModal, isOpen }}>
+    <UserContext.Provider
+      value={{
+        userLogin,
+        createUser,
+        loginUser,
+        logout,
+        techsList,
+        setTechsList,
+        openModal,
+        closeModal,
+        isOpen,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );
