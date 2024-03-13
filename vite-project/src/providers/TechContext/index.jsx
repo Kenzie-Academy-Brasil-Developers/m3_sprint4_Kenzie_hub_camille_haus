@@ -9,8 +9,6 @@ export const TechProvider = ({ children }) => {
   const [editingTech, setEditingTech] = useState(null);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
-  const token = localStorage.getItem("@KenzieHub:token");
-
   const openEditModal = () => {
     setIsEditModalOpen(true);
   };
@@ -20,6 +18,9 @@ export const TechProvider = ({ children }) => {
   };
 
   const addTechs = async (payload) => {
+
+    const token = localStorage.getItem("@KenzieHub:token");
+
     try {
       const { data } = await api.post("/users/techs", payload, {
         headers: {
@@ -34,6 +35,9 @@ export const TechProvider = ({ children }) => {
   };
 
   const deleteTech = async (removeId) => {
+
+    const token = localStorage.getItem("@KenzieHub:token");
+
     try {
       await api.delete(`/users/techs/${removeId}`, {
         headers: {
@@ -49,6 +53,9 @@ export const TechProvider = ({ children }) => {
   };
 
   const techUpdate = async (payload) => {
+
+    const token = localStorage.getItem("@KenzieHub:token");
+
     try {
       const { data } = await api.put(
         `/users/techs/${editingTech.id}`,
