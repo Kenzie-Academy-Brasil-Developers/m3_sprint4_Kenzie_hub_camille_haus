@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import api from "../../services/api";
+import { jwtDecode } from "jwt-decode";
 
 export const UserContext = createContext({});
 
@@ -32,7 +33,27 @@ export const UserProvider = ({ children }) => {
     }
   };
 
+  const googleLogIn = async (credentialResponse) => {
+    const credentialResponseDecoded = jwtDecode(credentialResponse.credential);
+
+    try {
+      const googleData = await api.post("/sessions", credentialResponseDecoded);
+      navigate("/dashboard");
+      setUserLogin(googleData.name);
+
+      toast.success("Login efetuado com sucesso!");
+
+      localStorage.setItem("@Google:token", JSON.stringify(googleData.sub));
+
+    } catch (error) {
+      console.log(error);
+
+      toast.error("Não foi possível logar com o Google");
+    }
+  };
+
   const loginUser = async (payload) => {
+    
     try {
       const { data } = await api.post("/sessions", payload);
       navigate("/dashboard");
@@ -90,6 +111,7 @@ export const UserProvider = ({ children }) => {
         openModal,
         closeModal,
         isOpen,
+        googleLogIn,
       }}
     >
       {children}
