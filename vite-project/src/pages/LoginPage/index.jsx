@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import styles from "../LoginPage/login.module.scss";
 import { useContext } from "react";
 import { UserContext } from "../../providers/UserContext";
-import GoogleSignIn from "../../components/GoogleSignIn";
 
 const LoginPage = () => {
   const { loginUser } = useContext(UserContext);
@@ -90,7 +89,6 @@ const LoginPage = () => {
           Entrar
         </button>
         <p className={styles.p}>Ainda não possui uma conta?</p>
-        <GoogleSignIn />
         <Link to="/register" className={styles.link}>
           <button className={styles.registerButton}>Cadastre-se</button>
         </Link>

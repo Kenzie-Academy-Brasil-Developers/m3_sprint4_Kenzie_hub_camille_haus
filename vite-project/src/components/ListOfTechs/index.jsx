@@ -22,7 +22,7 @@ const ListOfTechs = ({ tech }) => {
               setEditingTech(tech);
             }}
           >
-            <LuPencil size={17}/>
+            <LuPencil size={17} />
           </button>
         </div>
       </div>

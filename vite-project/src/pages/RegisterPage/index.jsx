@@ -4,8 +4,12 @@ import formRegisterSchema from "./formRegisterSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
 import styles from "../RegisterPage/register.module.scss";
+import { useContext } from "react";
+import { UserContext } from "../../providers/UserContext";
 
 const RegisterPage = () => {
+  const { createUser } = useContext(UserContext);
+
   const {
     register,
     handleSubmit,

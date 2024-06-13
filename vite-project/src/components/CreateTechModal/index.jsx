@@ -14,7 +14,7 @@ const CreateTechModal = () => {
           X
         </button>
       </div>
-      <Modal title={"Selecionar status"} buttonName={"Cadastrar Tecnologia"}/>
+      <Modal title={"Selecionar status"} buttonName={"Cadastrar Tecnologia"} />
     </div>
   );
 };

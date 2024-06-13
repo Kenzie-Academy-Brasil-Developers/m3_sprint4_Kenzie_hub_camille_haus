@@ -8,7 +8,8 @@ import { useContext } from "react";
 import { RiAddBoxFill } from "react-icons/ri";
 
 const DashboardPage = () => {
-  const { userLogin, logout, isOpen, openModal, techsList } = useContext(UserContext);
+  const { userLogin, logout, isOpen, openModal, techsList } =
+    useContext(UserContext);
   const { isEditModalOpen } = useContext(TechContext);
 
   return (
@@ -69,15 +70,16 @@ const DashboardPage = () => {
       <div className={styles.thirdBlock}>
         <h3>Tecnologias</h3>
         <span>
-          <RiAddBoxFill size={45} onClick={() => openModal()}/>
+          <RiAddBoxFill size={45} onClick={() => openModal()} />
         </span>
       </div>
       {isOpen ? <CreateTechModal /> : null}
       {isEditModalOpen ? <EditTechModal /> : null}
       <div className={styles.fourthBlock}>
         <ul>
-          {techsList.map((tech) => 
-          <ListOfTechs key={tech.id} tech={tech}/>)}
+          {techsList.map((tech) => (
+            <ListOfTechs key={tech.id} tech={tech} />
+          ))}
         </ul>
       </div>
     </div>

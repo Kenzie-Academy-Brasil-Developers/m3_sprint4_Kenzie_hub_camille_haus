@@ -18,7 +18,6 @@ export const TechProvider = ({ children }) => {
   };
 
   const addTechs = async (payload) => {
-
     const token = localStorage.getItem("@KenzieHub:token");
 
     try {
@@ -35,7 +34,6 @@ export const TechProvider = ({ children }) => {
   };
 
   const deleteTech = async (removeId) => {
-
     const token = localStorage.getItem("@KenzieHub:token");
 
     try {
@@ -53,7 +51,6 @@ export const TechProvider = ({ children }) => {
   };
 
   const techUpdate = async (payload) => {
-
     const token = localStorage.getItem("@KenzieHub:token");
 
     try {
